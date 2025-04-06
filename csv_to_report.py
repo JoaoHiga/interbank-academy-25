@@ -1,7 +1,7 @@
 import sys
 import os
 from csv import DictReader
-from library import Transaction, TransactionCollection
+from modules.library import Transaction, TransactionCollection
 
 
 def read_csv(path_to_csv: str) -> TransactionCollection:
