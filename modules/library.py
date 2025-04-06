@@ -57,8 +57,9 @@ class TransactionCollection:
         add_transaction(self, transaction: Transaction) -> None:
             Agrega una transacción a la colección.
 
-        sum_amounts(self) -> float:
-            Calcula y retorna la suma total de los montos de todas las transacciones en la colección.
+        generate_balance(self) -> float:
+            Calcula y retorna la diferencia entre la suma del monto de transacciones de tipo "Crédido"
+            y la suma del monto de transacciones tipo "Débito".
 
         max_transaction(self) -> Transaction:
             Retorna la transacción con el monto máximo de la colección.
@@ -89,8 +90,14 @@ class TransactionCollection:
     def add_transaction(self, transaction: Transaction) -> None:
         self.transactions.append(transaction)
 
-    def sum_amounts(self) -> float:
-        return sum(t.amount for t in self.transactions)
+    def generate_balance(self) -> float:
+        sum_credit: float = sum(
+            t.amount for t in self.transactions if t.type == "Crédito"
+        )
+        sum_debit: float = sum(
+            t.amount for t in self.transactions if t.type == "Débito"
+        )
+        return sum_credit - sum_debit
 
     def max_transaction(self) -> Transaction:
         return max(self, key=lambda t: t.amount)
@@ -102,7 +109,7 @@ class TransactionCollection:
         return len(list(filter(lambda t: t.type == "Débito", self)))
 
     def generate_report(self) -> str:
-        sum_amounts: float = self.sum_amounts()
+        balance: float = self.generate_balance()
         max_transaction: Transaction = self.max_transaction()
         total_credit_transactions = self.total_credit_transactions()
         total_debit_transactions = self.total_debit_transactions()
@@ -110,7 +117,7 @@ class TransactionCollection:
         return f"""
         Reporte de Transacciones
         ---------------------------------------------
-        Balance final: {sum_amounts}
+        Balance final: {balance}
         Transacción de mayor monto: ID {max_transaction.id} - {max_transaction.amount}
         Conteo de Transacciones: Crédito: {total_credit_transactions} Débito: {total_debit_transactions}
         """
