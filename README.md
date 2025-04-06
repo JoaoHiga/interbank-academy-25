@@ -71,6 +71,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
+<a id="about-the-project"></a>
 ## Acerca del proyecto
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -80,7 +81,7 @@ Here's a blank template to get started.
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
 
-
+<a id="built-with"></a>
 ### Tecnologías usadas
 
 * [![Python][Next.js]][Next-url]
@@ -88,13 +89,14 @@ Here's a blank template to get started.
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
 
-
+<a id="getting-started"></a>
 <!-- GETTING STARTED -->
 ## Comenzando
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
+<a id="prerequisites"></a>
 ### Prerequisitos
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -103,6 +105,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
+<a id="installation"></a>
 ### Instalación
 
 1. Get a free API Key at [https://example.com](https://example.com)
@@ -127,7 +130,7 @@ This is an example of how to list things you need to use the software and how to
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
 
-
+<a id="usage"></a>
 <!-- USAGE EXAMPLES -->
 ## Uso
 
@@ -137,7 +140,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
-
+<a id="contributing"></a>
 <!-- CONTRIBUTING -->
 ## Contribuciones
 
@@ -154,7 +157,7 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
-
+<a id="contact"></a>
 <!-- CONTACT -->
 ## Contaco
 
@@ -165,7 +168,7 @@ Enlace al proyecto: [https://github.com/github_username/repo_name](https://githu
 <p align="right">(<a href="#readme-top">Hacia arriba</a>)</p>
 
 
-
+<a id="acknowledgments"></a>
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
