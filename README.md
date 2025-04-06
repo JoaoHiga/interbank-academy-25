@@ -46,7 +46,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>índice de contenido</summary>
+  ## índice de contenido
   <ol>
     <li>
       <a href="#about-the-project">Acerca del proyecto</a>
