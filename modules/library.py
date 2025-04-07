@@ -26,7 +26,6 @@ class Transaction:
     :ivar id: Identificador único de la transacción.
     :ivar type: Tipo de la transacción.
     :ivar amount: Monto de la transacción.
-    :methos aa
     """
 
     def __init__(self, id: int, type: str, amount: float):
@@ -97,7 +96,7 @@ class TransactionCollection:
         sum_debit: float = sum(
             t.amount for t in self.transactions if t.type == "Débito"
         )
-        return sum_credit - sum_debit
+        return round((sum_credit - sum_debit), 2)
 
     def max_transaction(self) -> Transaction:
         return max(self, key=lambda t: t.amount)
