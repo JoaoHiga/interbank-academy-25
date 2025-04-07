@@ -170,6 +170,9 @@ def generate_report(self) -> str:
   """
 ```
 
+![Demo](https://github.com/JoaoHiga/interbank-academy-25/blob/main/images/demo.png)
+
+
 ## 🔍 Decisiones Clave
 
 | Decisión | Justificación | Impacto |
