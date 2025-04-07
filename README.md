@@ -200,13 +200,6 @@ interbank-academy-25/
 
 ✨ Las contribuciones son lo que hace que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Todas tus contribuciones serán enormemente valoradas.
 
-Si tienes una sugerencia para mejorar el proyecto:
-
-1. Haz un fork del repositorio y crea un Pull Request.
-
-2. O simplemente abre un issue con la etiqueta **"mejora"**.
-¡No olvides darle una ⭐ al proyecto! ¡Gracias por tu apoyo!
-
 📋 Guía rápida para contribuir:
 1. Bifurca el proyecto (fork)
 2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
