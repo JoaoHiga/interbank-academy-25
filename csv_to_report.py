@@ -35,16 +35,18 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
 
     try:
         with open(path_to_csv, encoding="utf-8", mode="r") as csv_file:
+            # Iterador de archivo CSV.
             csv_reader: DictReader = DictReader(csv_file, delimiter=",")
+            # Obtiene encabezados de CSV.
             csv_headers = csv_reader.fieldnames
-
+            # Comprueba si existen los encabezados deseados.
             if csv_headers is None or not desired_headers.issubset(csv_headers):
                 raise ValueError(
                     "El archivo CSV no contiene encabezados válidos o esperados."
                 )
 
             transactions = TransactionCollection()
-
+            # Comprueba cada entrada y las agrega al objeto transactions.
             for entry in csv_reader:
                 try:
                     id: int = int(entry["id"])
@@ -58,7 +60,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
                 transactions.add_transaction(Transaction(id, type, amount))
 
             return transactions
-
+    # Excepciones
     except FileNotFoundError:
         raise FileNotFoundError("Archivo no encontrado en la ruta especificada.")
     except UnicodeDecodeError:
@@ -66,6 +68,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
 
 
 if __name__ == "__main__":
+    # Comprueba si se ha brindado la ruta del archivo CSV.
     if len(sys.argv) != 2:
         print("No se proporcionó la ruta del archivo CSV.")
         print(f'Ejemplo: python {os.path.basename(__file__)} "ruta/a/transacciones.csv"')
@@ -73,5 +76,6 @@ if __name__ == "__main__":
 
     csv_path: str = sys.argv[1]
 
+    # Ejecuta la función read_csv() e imprime reporte
     transactions: TransactionCollection = read_csv(csv_path)
     print(transactions.generate_report())
