@@ -50,6 +50,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
                     id: int = int(entry["id"])
                     amount: float = float(entry["monto"])
                 except TypeError:
+                    print(f"No se pudo procesar la transacción de ID: {entry["id"]}.")
                     continue
 
                 type: str = entry["tipo"]
@@ -67,7 +68,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("No se proporcionó la ruta del archivo CSV.")
-        print(f'Ejemplo: python {os.path.basename(__file__)} "transacciones.csv"')
+        print(f'Ejemplo: python {os.path.basename(__file__)} "ruta/a/transacciones.csv"')
         sys.exit(1)
 
     csv_path: str = sys.argv[1]
