@@ -51,7 +51,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
                 try:
                     id: int = int(entry["id"])
                     amount: float = float(entry["monto"])
-                except TypeError:
+                except ValueError:
                     print(f"No se pudo procesar la transacción de ID: {entry["id"]}.")
                     continue
 
