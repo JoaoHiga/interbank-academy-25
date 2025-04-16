@@ -52,7 +52,7 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
                     id: int = int(entry["id"])
                     amount: float = float(entry["monto"])
                 except ValueError:
-                    print(f"No se pudo procesar la transacción de ID: {entry["id"]}.")
+                    print(f"No se pudo procesar la transacción de ID: {entry['id']}.")
                     continue
 
                 type: str = entry["tipo"]
@@ -64,14 +64,16 @@ def read_csv(path_to_csv: str) -> TransactionCollection:
     except FileNotFoundError:
         raise FileNotFoundError("Archivo no encontrado en la ruta especificada.")
     except UnicodeDecodeError:
-        raise ValueError("Tipo de archivo o codificación incorrecta.")
+        raise ValueError("El archivo brindado no corresponde a un CSV.")
 
 
 if __name__ == "__main__":
     # Comprueba si se ha brindado la ruta del archivo CSV.
     if len(sys.argv) != 2:
         print("No se proporcionó la ruta del archivo CSV.")
-        print(f'Ejemplo: python {os.path.basename(__file__)} "ruta/a/transacciones.csv"')
+        print(
+            f'Ejemplo: python {os.path.basename(__file__)} "ruta/a/transacciones.csv"'
+        )
         sys.exit(1)
 
     csv_path: str = sys.argv[1]
